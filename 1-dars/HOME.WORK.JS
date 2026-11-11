@@ -47,4 +47,73 @@
 // const soat = String(bugun.getHours()).padStart(2 , 0);
 // const minut = String(bugun.getMinutes()).padStart(2 , 0);
 
-// console.log(sana + "." +  oy + "." + yil + " " + soat + ":" + minut);
+// console.log(sana + "." +  oy + "." + yil + " " + soat + ":" + minut);           
+
+
+// ------------6---------------
+
+// setTimeout(() => {
+//    console.log("Salom Dunyo!");
+// }, 2000);
+
+
+// ------------7---------------
+
+// let hisob = 0;
+
+// const id = setInterval(() => {
+//   hisob++;
+//   console.log("Tik-tak", hisob);
+
+//   if (hisob === 3) {
+//     clearInterval(id);
+//   }
+// }, 1000);
+
+
+// ------------8---------------
+
+// setTimeout(() => {
+//  console.log("Bir");
+// },1000);
+// setTimeout(() => {
+//  console.log("Ikki");
+// },3000);
+// setTimeout(() => {
+//  console.log("Uch");
+// },6000);
+
+// ------------9---------------
+
+// let son = 5; 
+// console.log(son);
+
+
+// const id = setInterval(() => {
+//     son--;
+//     console.log(son);
+    
+//     if(son === 0){
+//         console.log("Start!");
+//         clearInterval(id);
+//     }
+// }, 1000);
+
+// ------------10---------------
+// function VaqtniolibBer(){
+//     let hozirgiVaqt = new Date();
+//     let soat = String(hozirgiVaqt.getHours()).padStart(2 , "0");
+//     let minut = String(hozirgiVaqt.getMinutes()).padStart(2, "0");
+//     let sekund = String(hozirgiVaqt.getSeconds()).padStart(2, "0");
+//     return `${soat}:${minut}:${sekund}`;
+// }
+
+// let chiqdi = 0;
+
+// const id = setInterval(() => {
+//     chiqdi++;
+//     console.log(VaqtniolibBer())
+//     if(chiqdi === 5){
+//         clearInterval(id);
+//     }
+// }, 1000);

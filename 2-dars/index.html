@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>6.2-dars Uyga vazifasi</title>
+        <style>
+
+.RejimAlmashtirish{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height: 50vh;
+}
+
+        </style>
+    </head>
+    <body>
+        <input id="inptFamiliya" type="text" placeholder="Familiyangizni kiriting">
+        <input id="inptYosh" type="number" placeholder="Yoshingizni kiriting">
+        <button onclick="Saqlash()">Saqlash</button>
+        <p id="chiqarish"></p>
+
+                <p id="natija"></p>
+                <button id="Oshirish">Bosish</button>
+                <button id="Nolgacha">Nolga tushirish</button>
+                
+                <div class="RejimAlmashtirish">
+                    <button onclick="RejimAlmashtir()">Rejimni almashtirish</button>
+                </div>
+
+                <input id="matnMaydoni" type="text" placeholder="Matn kiriting...">
+                <button id="SaqlashTugmasi">Eslab qol</button>
+
+                <script>
+                    let son = localStorage.getItem('son') || 0;
+                    document.getElementById('Oshirish').onclick = function(){
+                    son++
+                    document.getElementById('natija').textContent = son;
+                    localStorage.setItem('son', son)
+                    }
+                    document.getElementById('natija').textContent = son;
+                    
+                    document.getElementById('Nolgacha').onclick = function(){
+                    son = 0
+                    document.getElementById('natija').textContent = son;
+                    localStorage.setItem('son', son) 
+                    }
+            let savedSurname = localStorage.getItem('surname');
+            let savedAge = localStorage.getItem('age');
+            
+            if (savedSurname && savedAge) {
+                document.getElementById('chiqarish').textContent = "Familiya: " + savedSurname + ", Yosh: " + savedAge + " da";
+                }
+                
+                function Saqlash() {
+                    let surname = document.getElementById('inptFamiliya').value;
+                    let age = document.getElementById('inptYosh').value;
+                    
+                    localStorage.setItem('surname', surname);
+                    localStorage.setItem('age', age);
+                    
+                    document.getElementById('chiqarish').textContent = "Familiya: " + surname + ", Yosh: " + age;
+                    }
+
+                    document.body.style.backgroundColor = localStorage.getItem("bg.color") || "white";
+                    document.body.style.color = localStorage.getItem("color") || "black";
+
+                    function RejimAlmashtir() {
+
+                    if (document.body.style.backgroundColor === "white" && document.body.style.color === "black") {
+                    document.body.style.backgroundColor = "black";
+                    document.body.style.color = "white";
+                    localStorage.setItem("bg.color", "black");
+                    localStorage.setItem("color", "white");
+                    } else {
+                    document.body.style.backgroundColor = "white";
+                    document.body.style.color = "black";
+                    localStorage.setItem("bg.color", "white");
+                    localStorage.setItem("color", "black");
+                  }
+                }
+
+                let input = document.getElementById("matnMaydoni");
+                let button = document.getElementById("SaqlashTugmasi");
+
+                if(sessionStorage.getItem("sessiyaMatni")){
+                    input.value = sessionStorage.getItem("sessiyaMatni");
+                }
+                button.onclick = function(){
+                    sessionStorage.setItem("sessiyaMatni", input.value)
+                }
+                </script>
+                </body>
+                </html>
+                
+                <!-- localStorage va sessionStorage eng katta farqi bu bittasi 
+                (localStorage) uzoq vaqtga saqlab qoladi va qaytarib chiqarveradi ikkinchisi (sessionStorage) voqtinchalik saqlab turadi 
+                tabni yopgandan kegin ochib ketadi. -->
